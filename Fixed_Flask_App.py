@@ -156,7 +156,6 @@ def create_file():
     except:
         return jsonify(data="File didn't create"), 200
 
-
 connection = {}
 max_con = 50
 
@@ -165,7 +164,6 @@ def factorial(number):
         return 1
     else:
         return number * factorial(number - 1)
-
 
 @app.route('/factorial/<int:n>')
 def factroial(n:int):
@@ -228,7 +226,6 @@ def login():
     else:
         # If the username or password is invalid, return an unsuccessful login message with HTTP status code 403
         return jsonify(data="Login unsuccessful"), 403
-
 
 @app.route('/route')
 def route():
