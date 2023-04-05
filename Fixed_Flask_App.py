@@ -236,7 +236,7 @@ def user_pass_control():
     else:
         return jsonify(data="Password doesn't include username"), 200
 
-# File Upload Vulnerability
+# Unrestricted File Upload Vulnerability
 # Define allowed file types
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 

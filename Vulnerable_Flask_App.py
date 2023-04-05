@@ -227,7 +227,7 @@ def user_pass_control():
     else:
         return jsonify(data="Password doesn't include username"), 200
 
-# File Upload Vulnerability
+# Unrestricted File Upload Vulnerability
 # Define route for file upload
 @app.route('/upload', methods = ['GET','POST'])
 def uploadfile():
