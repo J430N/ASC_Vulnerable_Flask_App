@@ -6,7 +6,7 @@ import sqlite3
 import os
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER']="/home/kali/Desktop/upload"
+app.config['UPLOAD_FOLDER']="./vul_upload"
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
 
 @app.route("/")
@@ -17,14 +17,14 @@ def main_page():
 @app.route("/user/<string:name>")
 def search_user(name):
     # Establish a connection to the SQLite database
-    con = sqlite3.connect("test.db")
+    con = sqlite3.connect("login.db")
 
     # Create a cursor object to execute SQL queries
     cur = con.cursor()
 
     # Execute a SELECT query to retrieve data based on the provided username
     # Note that this is vulnerable to SQL injection attacks
-    cur.execute("select * from test where username = '%s'" % name)
+    cur.execute("select * from users where username = '%s'" % name)
 
     # Fetch all the rows returned by the query and convert to a string
     data = str(cur.fetchall())

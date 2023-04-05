@@ -18,14 +18,14 @@ def main_page():
 @app.route("/user/<string:name>")
 def search_user(name):
     # Establish a connection to the SQLite database
-    con = sqlite3.connect("test.db")
+    con = sqlite3.connect("login.db")
 
     # Create a cursor object to execute SQL queries
     cur = con.cursor()
 
     # Execute a SELECT query to retrieve data based on the provided username
     # Note that this version uses parameterized queries to prevent SQL injection attacks
-    cur.execute("SELECT * FROM test WHERE username = ?", (name,))
+    cur.execute("SELECT * FROM users WHERE username = ?", (name,))
 
     # Fetch all the rows returned by the query and convert to a string
     data = str(cur.fetchall())
@@ -181,26 +181,6 @@ def factroial(n:int):
     return jsonify(data=result), 200
 
 # Hardcoded Password
-'''
-Create a database with a table to store the user's information, including the hashed password
-Remove/comment out the code below after the database is created in the first run
-'''
-# # Create a connection to the SQLite database
-# conn = sqlite3.connect('login.db')
-# c = conn.cursor()
-
-# # Create a table to store the user's information, including the hashed password
-# c.execute('''CREATE TABLE users
-#              (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT)''')
-
-# # Securely hash the password and store it in the database
-# hashed_password = bcrypt.hashpw(b"cyber", bcrypt.gensalt()) # Passowrd is "cyber"
-# c.execute("INSERT INTO users (username, password) VALUES (?, ?)", ('anil', hashed_password))
-# conn.commit()
-
-'''
-Handle the login request
-'''
 # This function handles the login request
 @app.route('/login',methods=["GET"])
 def login():
@@ -261,7 +241,7 @@ def user_pass_control():
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 # Set the upload folder and maximum content length for the app
-app.config['UPLOAD_FOLDER'] = "/home/kali/Desktop/upload"
+app.config['UPLOAD_FOLDER'] = "/home/kali/Desktop/fix_upload"
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024
 
 # Function to check if the file extension is allowed

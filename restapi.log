@@ -1,3 +1,29 @@
-DEBUG:root:[('test', 'test'), ('erlik', '$x&3de)GwWEIjyhpsA'), ('erlik', '12345'), ('erlik', 'f2Vbhj38qrS4018JDSKa'), ('test', '12345'), ('test', '$x&3de)GwWEIjyhpsA'), ('erlik', '66f2816ac6A!')]
-INFO:werkzeug:127.0.0.1 - - [04/Apr/2023 21:25:50] "GET /user/'%20or%20'1=1 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [04/Apr/2023 22:03:56] "GET /login?username=anil&password=cyber HTTP/1.1" 200 -
+DEBUG:root:[]
+INFO:werkzeug:127.0.0.1 - - [05/Apr/2023 22:42:17] "GET /user/'%20or%20'1=1 HTTP/1.1" 200 -
+ERROR:Fixed_Flask_App:Exception on /user/' or '1=1 [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kali/Desktop/ASC_Vulnerable_Flask_App/Fixed_Flask_App.py", line 21, in search_user
+    con = sqlite3.connect("login.db")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+INFO:werkzeug:127.0.0.1 - - [05/Apr/2023 22:44:55] "[35m[1mGET /user/'%20or%20'1=1 HTTP/1.1[0m" 500 -
+DEBUG:root:[]
+INFO:werkzeug:127.0.0.1 - - [05/Apr/2023 22:45:18] "GET /user/'%20or%20'1=1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Apr/2023 22:46:26] "GET /upload HTTP/1.1" 200 -
+:53] "[35m[1mGET /user/'%20or%20'1=1 HTTP/1.1[0m" 500 -
+DEBUG:root:[(1, 'admin', b'$2b$12$k3aAtnAyebiYqqQ3LKqW7egV5XFsIlw0KcbMs2DLIhERFLxJlQBw.'), (2, 'user1', b'$2b$12$J/TmPdEMHoyILfbHGvVtfON7LIZVSr.R9XWapEZUmZw4jnpMxjDh.'), (3, 'user2', b'$2b$12$ur2/ohbPXqfZ8SVnXrUskuHyDk96uqKzIfzbU6E.G5CQjECq80oB.')]
+INFO:werkzeug:127.0.0.1 - - [05/Apr/2023 22:45:20] "GET /user/'%20or%20'1=1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Apr/2023 22:46:37] "GET /upload HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Apr/2023 22:46:47] "POST /upload HTTP/1.1" 200 -
