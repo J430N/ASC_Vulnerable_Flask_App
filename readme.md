@@ -79,11 +79,11 @@ A SQL injection vulnerability allows an attacker to execute arbitrary SQL querie
 
 **Vulnerable Flask Application**
 ```
-http://127.0.0.1:8081/user/'%20or%20'1=1
+http://127.0.0.1:8081/user/' or 1=1 --'
 ```
 **Fixed Flask Applicatrion**
 ```
-http://127.0.0.1:8082/user/'%20or%20'1=1
+http://127.0.0.1:8082/user/' or 1=1 --'
 ```
 
 ## Password Management

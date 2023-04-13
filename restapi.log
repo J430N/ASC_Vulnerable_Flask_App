@@ -1,9 +1,18 @@
+DEBUG:root:[(1, 'admin', b'$2b$12$k3aAtnAyebiYqqQ3LKqW7egV5XFsIlw0KcbMs2DLIhERFLxJlQBw.'), (2, 'user1', b'$2b$12$J/TmPdEMHoyILfbHGvVtfON7LIZVSr.R9XWapEZUmZw4jnpMxjDh.'), (3, 'user2', b'$2b$12$ur2/ohbPXqfZ8SVnXrUskuHyDk96uqKzIfzbU6E.G5CQjECq80oB.')]
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 20:14:14] "GET /user/name='%20or%20'1=1 HTTP/1.1" 200 -
+DEBUG:root:[(1, 'admin', b'$2b$12$k3aAtnAyebiYqqQ3LKqW7egV5XFsIlw0KcbMs2DLIhERFLxJlQBw.'), (2, 'user1', b'$2b$12$J/TmPdEMHoyILfbHGvVtfON7LIZVSr.R9XWapEZUmZw4jnpMxjDh.'), (3, 'user2', b'$2b$12$ur2/ohbPXqfZ8SVnXrUskuHyDk96uqKzIfzbU6E.G5CQjECq80oB.')]
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 20:14:25] "GET /user/'%20or%20'1=1 HTTP/1.1" 200 -
+DEBUG:root:[(1, 'admin', b'$2b$12$k3aAtnAyebiYqqQ3LKqW7egV5XFsIlw0KcbMs2DLIhERFLxJlQBw.'), (2, 'user1', bDEBUG:root:[]
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 20:27:58] "GET /user/'%20or%201=1%20--' HTTP/1.1" 200 -
 DEBUG:root:[]
-INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 17:26:52] "GET /user/'%20or%20'1=1 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 17:27:05] "GET /login?username=admin&password=qwerty HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 17:27:45] "GET /upload HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 17:27:50] "[31m[1mPOST /upload HTTP/1.1[0m" 413 -
-INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 17:27:55] "GET /upload HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 17:28:01] "POST /upload HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 17:28:02] "GET /upload HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 17:28:05] "POST /upload HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 20:29:41] "GET /user/'%20or%201=1%20--' HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 21:32:04] "GET /upload HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 21:32:10] "POST /upload HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 21:40:52] "GET /upload HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 21:41:08] "POST /upload HTTP/1.1" 200 -
+T /user/'%20or%201=1%20--' HTTP/1.1" 200 -
+DEBUG:root:[(1, 'admin', b'$2b$12$k3aAtnAyebiYqqQ3LKqW7egV5XFsIlw0KcbMs2DLIhERFLxJlQBw.'), (2, 'user1', b'$2b$12$J/TmPdEMHoyILfbHGvVtfON7LIZVSr.R9XWapEZUmZw4jnpMxjDh.'), (3, 'user2', b'$2b$12$ur2/ohbPXqfZ8SVnXrUskuHyDk96uqKzIfzbU6E.G5CQjECq80oB.')]
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 20:29:46] "GET /user/'%20or%201=1%20--' HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 20:52:22] "GET /login?username=admin&password=qwerty HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 21:19:58] "GET /upload HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Apr/2023 21:20:23] "POST /upload HTTP/1.1" 200 -
