@@ -190,7 +190,7 @@ def login():
     passwd=request.args.get("password")
     # Check if the username and password are valid
     # In this example, the password is hardcoded, which is a security vulnerability
-    if "anil" in username and "cyber" in passwd:
+    if "admin" in username and "qwerty" in passwd:
         # If the username and password are valid, return a successful login message with HTTP status code 200
         return jsonify(data="Login successful"), 200
     else:
