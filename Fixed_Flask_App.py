@@ -1,7 +1,6 @@
 from flask import Flask,jsonify,render_template_string,request,Response,render_template
 import subprocess
 from werkzeug.datastructures import Headers
-from werkzeug.utils import secure_filename
 import sqlite3
 import bcrypt
 import uuid 
@@ -270,8 +269,7 @@ def uploadfile():
         if not f.content_type.startswith(('image/', 'application/pdf', 'text/plain')):
             return 'Invalid Content-Type'
         # generate a unique filename using uuid and secure_filename
-        filename = secure_filename(f.filename)
-        filename = str(uuid.uuid4()) + '.' + filename.rsplit('.', 1)[1].lower()
+        filename = str(uuid.uuid4()) + '.' + f.filename.rsplit('.', 1)[1].lower()
         # save file to upload folder
         f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return 'File uploaded successfully'

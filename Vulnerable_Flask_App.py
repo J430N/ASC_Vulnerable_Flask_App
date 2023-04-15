@@ -1,7 +1,6 @@
 from flask import Flask,jsonify,render_template_string,request,Response,render_template
 import subprocess
 from werkzeug.datastructures import Headers
-from werkzeug.utils import secure_filename
 import sqlite3
 import os
 
@@ -235,10 +234,8 @@ def uploadfile():
     if request.method == 'POST':
         # Get the uploaded file from the request object
         f = request.files['file']
-        # Get a secure filename for the uploaded file
-        filename=secure_filename(f.filename)
         # Save the uploaded file in the upload folder
-        f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
         # Return a success message
         return 'File uploaded successfully'
     else:
