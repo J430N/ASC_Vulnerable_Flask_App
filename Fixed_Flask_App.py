@@ -13,7 +13,7 @@ app = Flask(__name__)
 def main_page():
     return "REST API"
 
-# SQL Injection
+# Parameterized Query
 @app.route("/user/<string:name>")
 def search_user(name):
     # Establish a connection to the SQLite database
@@ -179,7 +179,7 @@ def factroial(n:int):
         connection[request.remote_addr] -= 1
     return jsonify(data=result), 200
 
-# Hardcoded Password
+# Password Hashing
 # This function handles the login request
 @app.route('/login',methods=["GET"])
 def login():
@@ -235,7 +235,7 @@ def user_pass_control():
     else:
         return jsonify(data="Password doesn't include username"), 200
 
-# Unrestricted File Upload Vulnerability
+# File Upload Validation
 # Define allowed file types
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
